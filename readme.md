@@ -2,7 +2,7 @@
 
 This repository contains a number of plugins you can use to enhance the editing-functionality of [Labrador CMS](http://publishlab.com).
 
-Please use and modify the plugin you find here as needed. If you want to share plugins you create with other Labrador-users please let us know.
+Please use and modify the plugin you find here as needed. If you want to share plugins you create with other Labrador-users please create a pull-request.
 
 ## About Labrador-plugins
 If you need to enhance Labrador-editing you can use plugins. Plugins supply additional functionality to the CMS and are only run in edit-mode. They can be initialized by any node- or structure-model. 
@@ -27,7 +27,7 @@ To add a plugin we include a plugins-object in a property-file for the structure
 ```
 
 - `publish_info` (string) is the name this plugin can be accessed with for the structure. 
-- `autoStart` (bool) Should the plugin start on page-load? 
+- `autoStart` (bool) Should the plugin start on page-load? (Default false)
 - `path` (string) Namespace-path for the plugin. 
 - `appendToAppMenu` (bool / string) If "toggle" or "label" a button is added to the Labrador-menu. This should only be used if there is one instance of the plugin for a page. If "toggle" is set the button will start and stop the plugin when clicked. 
 
@@ -96,5 +96,7 @@ When an instance of the plugin is created the plugin reseives one argument: An o
 Labrador require these public methods for any plugin: 
 - `start (void) Start the plugin 
 - `stop (void) Stop the plugin 
-- `remove (void) Remove the plugin. Any cleanup (memory or DOM-elements) should be done here. 
+- `remove (void) Remove the plugin. Any cleanup (memory or DOM-elements, event-listeners, repeating tasks) should be done here. 
 - `isActive (bool) true if plugin is active, false if not. 
+
+If your plugin listen to Labrador-events or use any repeating tasks these should be stopped in the remove-handler. This is called when a contentbox is removed.
