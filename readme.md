@@ -96,9 +96,9 @@ When an instance of the plugin is created the plugin reseives one argument: An o
 - `viewports` (array) List of all viewports 
 
 Labrador require these public methods for any plugin: 
-- `start (void) Start the plugin 
-- `stop (void) Stop the plugin 
-- `remove (void) Remove the plugin. Any cleanup (memory or DOM-elements, event-listeners, repeating tasks) should be done here. 
-- `isActive (bool) true if plugin is active, false if not. 
+- `start` (void) Start the plugin 
+- `stop` (void) Stop the plugin 
+- `remove` (void) Remove the plugin. Any cleanup (memory or DOM-elements, event-listeners, repeating tasks) should be done here. 
+- `isActive` (bool) true if plugin is active, false if not. 
 
 If your plugin listen to Labrador-events or use any repeating tasks these should be stopped in the remove-handler. This is called when a contentbox is removed.

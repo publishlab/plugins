@@ -2,7 +2,6 @@
 Namespace: `Plugins.PublishInfo`
 
 This plugin can be used for article-boxes to display a list of dates and names of every time the article have been published.
-You can easily create your own plugins to add functionality to Labrador in edit-mode.
 
 Config-example for article-structure:
 ```json
