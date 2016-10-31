@@ -1,5 +1,7 @@
 # Labrador Plugins-repository
 
+https://github.com/publishlab/plugins
+
 This repository contains a number of plugins you can use to enhance the editing-functionality of [Labrador CMS](http://publishlab.com).
 
 Please use and modify the plugin you find here as needed. If you want to share plugins you create with other Labrador-users please create a pull-request.
