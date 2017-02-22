@@ -25,6 +25,11 @@ Plugins.YouTubeEditor = function(params) {
     this.btn_play = null;
     this.version = "1.0";
 
+    this.init = function(params) {
+        // Add required CSS-file.
+        params.loader.addCss('/view-resources/lib/edit/plugins/YouTubeEditor/YouTubeEditor.css', null, null);
+    };
+
     this.start = function() {
         this.isActive = true;
         this.getData();
@@ -395,7 +400,7 @@ Plugins.YouTubeEditor = function(params) {
 
         var scrollTop = $lab(parent.window).scrollTop() + 30;
         this.editorGui = $lab('<div>').addClass("YouTubeEditor").css("margin-top", scrollTop + "px");
-        this.editorGui.append('<div id="YouTubeEditorContainer"></div>');
+        this.editorGui.append('<div id="YouTubeEditorContainer" style="width:800px;"></div>');
         this.editorGui.click(function(e) {
             e.stopPropagation();
         });
@@ -429,6 +434,8 @@ Plugins.YouTubeEditor = function(params) {
             }            
         }
     };
+
+    this.init(params);
 
     var self = this;
 

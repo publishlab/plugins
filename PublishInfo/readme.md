@@ -16,14 +16,7 @@ Config-example for article-structure:
 
 The structure-model will create an instance of the plugin "Plugins.PublishInfo" when needed ("autoStart" = false).
 
-This plugin ships with a css-file. This is included in the front-pages that needs it like this (f.eks: /view/page/front/default/edit_properties.json):
-```json
-"filesForMainWindow": {
-    "css": [
-        "/view-resources/lib/edit/plugins/PublishInfo/PublishInfo.css"
-    ]
-},
-```
+This plugin ships with a css-file. This is included on the pages that needs it using the supplied loader-instance in the init-method.
  
 Config-example for menu-item triggering the plugin:
 ```json

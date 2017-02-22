@@ -1,6 +1,6 @@
 /**
  * PublishInfo
- * See PublishInfo.md for documentation
+ * See readme.md for documentation
  */
 
 var Plugins = Plugins || {};
@@ -11,6 +11,11 @@ Plugins.PublishInfo = function(params) {
     this.structureModel = params.structureModel;
     
     this.isActive = false;
+
+    this.init = function(params) {
+        // Add required CSS-file. Set fourth argument to true to load the file in the main window (where the GUI is displayed)
+        params.loader.addCss('/view-resources/lib/edit/plugins/PublishInfo/PublishInfo.css', null, null, true);
+    };
 
     this.start = function() {
         this.isActive = true;
@@ -125,6 +130,8 @@ Plugins.PublishInfo = function(params) {
             }
         );
     };
+
+    this.init(params);
 
     var self = this;
 

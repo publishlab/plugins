@@ -50,8 +50,8 @@ Config-example to display a button to start the plugin `/view/menu_settings/stru
 The button `video_edit` is added to all article-boxes that contains a child of type `youtube`. 
 When clicking the button the method `displayEditor` is run on the plugin. If it is not already started it will start now.
 
-This plugin is shipped with a CSS file that should be included in the page-template in edit-mode:
-`<link rel="stylesheet" href="/view-resources/lib/edit/plugins/YouTubeEditor/YouTubeEditor.css" />`
+This plugin is shipped with a CSS file that should be included in the page-template in edit-mode.
+This is done when initializing the plugin.
 
 @category    Labrador
 @package     Labrador 3

@@ -13,8 +13,7 @@
     width: 860px;
     min-height: 560px;
     margin: 2em auto;
-    padding: 2em;
-    /*overflow: hidden;*/
+    padding: 30px;
     -webkit-user-select: none;
     user-select: none;
 }
@@ -187,7 +186,7 @@
 }
 
 .YouTubeEditor .yte-btn:hover {
-    border-color: #000;
+    border-color: #676767;
 }
 
 .YouTubeEditor .yte-btn:active {
@@ -198,14 +197,13 @@
     font-size: 1.7em;
 }
 
-.YouTubeEditor .yte-btn.lab-icon-play.playing:before {
-    content: "";
-    border-left: 3px solid #000;
-    border-right: 3px solid #000;
-    width: 0.5em;
+.YouTubeEditor .yte-btn:before {
     display: inline-block;
-    height: 0.8em;
-    margin-left: 0em;
+    margin-top: 0.35em;
+}
+
+.YouTubeEditor .yte-btn.lab-icon-play.playing:before {
+    content: "\e924";
 }
 
 .YouTubeEditor .yte-btn.lab-icon-backward:before {
@@ -216,6 +214,10 @@
 .YouTubeEditor .yte-btn.lab-icon-start_point:before,
 .YouTubeEditor .yte-btn.lab-icon-play:before {
     margin-left: 0.2em;
+}
+
+.YouTubeEditor .yte-btn.lab-icon-play.playing:before {
+    margin-left:0;
 }
 
 .YouTubeEditor .yte-btn.lab-icon-end_point:before {

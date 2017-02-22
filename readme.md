@@ -94,6 +94,7 @@ When an instance of the plugin is created the plugin reseives one argument: An o
 - `userId` (int) ID of current user 
 - `viewport` (string) Name of current viewport 
 - `viewports` (array) List of all viewports 
+- `loader` (object) Helper to load js and css-files required by the plugin.
 
 Labrador require these public methods for any plugin: 
 - `start` (void) Start the plugin 
