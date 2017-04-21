@@ -1,0 +1,170 @@
+
+#plugins-pusher-activity {
+    position: fixed;
+    bottom: 1em;
+    left: 1em;
+    overflow: visible;
+    background-color: rgba(251, 251, 251, 0.96);
+    box-sizing: content-box;
+}
+
+#plugins-pusher-activity.ppa-open {
+    height: 18.4em;
+    width: 26em;
+    border: 1px solid #c3c3c3;
+    outline: 1px solid #fff;
+}
+
+#plugins-pusher-activity:before {
+    content: "\e927";
+    width: 1.2em;
+    height: 1.2em;
+    font-size: 3em;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0.3em;
+    color: gray;
+    text-align: center;
+    font-family: 'Labrador';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 0.2em 0.1em 0;
+    background-color: #fff;
+}
+
+#plugins-pusher-activity:hover:before {
+    color: green;
+}
+
+#plugins-pusher-activity.ppa-open:before {
+    content: "\e622";
+    top: -0.5em;
+    right: -0.5em;
+    left: auto;
+    bottom: auto;
+    width: 1.2em;
+    height: 1.1em;
+    font-size: 1.6em;
+    padding: 0.2em 0.1em 0.1em;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    background-color: green;
+    color: #fff;
+}
+
+#plugins-pusher-activity[data-ppa-highlight='true']:before {
+    animation: ppa-blinker 1s linear infinite;
+}
+
+@keyframes ppa-blinker {  
+    50% { box-shadow: 0 0 0 4px green; }
+}
+
+#plugins-pusher-activity .ppa-info {
+    display: none;
+    color: gray;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1em 2em;
+    font-size: 0.9em;
+    background-color: rgba(251, 251, 251, 0.96);
+    border-top: 1px solid gainsboro;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#plugins-pusher-activity.ppa-open .ppa-info {
+    display: block;
+}
+
+#plugins-pusher-activity .ppa-pages {
+    display: none;
+    overflow: auto;
+    height: 100%;
+    max-height: 11.4em;
+}
+
+#plugins-pusher-activity.ppa-open .ppa-pages {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.5em;
+}
+#plugins-pusher-activity.ppa-open .ppa-pages:empty {
+    max-height: none;
+}
+
+#plugins-pusher-activity.ppa-open .ppa-pages:empty:after {
+    content: "No activity yet ...";
+    display: block;
+    text-align: center;
+    padding-top: 0.4em;
+    color: gray;
+}
+
+#plugins-pusher-activity.ppa-open .ppa-pages .ppa-page {
+    border: 1px solid #cecece;
+    width: 5em;
+    height: 5.3em;
+    margin: 0.5em;
+    text-align: center;
+    color: gray;
+    font-size: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+#plugins-pusher-activity.ppa-open .ppa-pages .ppa-page:hover {
+    cursor: pointer;
+}
+
+#plugins-pusher-activity .ppa-pages .ppa-page[data-ppa-highlight='true'] {
+   animation: ppa-blinker 1s linear infinite;
+}
+
+#plugins-pusher-activity.ppa-open .ppa-pages .ppa-page.ppa-active {
+    color: green;
+    border-color: green;
+}
+
+#plugins-pusher-activity.ppa-open .ppa-pages .ppa-page:before {
+    content: "?";
+    font-size: 2.4em;
+    font-weight: 200;
+    display: block;
+    padding: 0.2em 0 0;
+}
+
+#plugins-pusher-activity.ppa-open .ppa-pages .ppa-page[data-page-type='article']:before {
+    content: "A";
+}
+
+#plugins-pusher-activity.ppa-open .ppa-pages .ppa-page[data-page-type='front']:before {
+    content: "F";
+}
+
+#plugins-pusher-activity.ppa-open .ppa-pages .ppa-page:after {
+    content: "";
+    background-color: #ababab;
+    color: #fff;
+    display: block;
+    top: -1em;
+    font-size: 0.7em;
+    right: -1em;
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+#plugins-pusher-activity.ppa-open .ppa-pages .ppa-page.ppa-active:after {
+    background-color: green;
+}

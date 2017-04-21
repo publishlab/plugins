@@ -1,0 +1,9 @@
+<div>
+    <p><span class="labDs-label">Status</span> {{#active}}Opened{{/active}}{{^active}}Closed{{/active}}</p>
+    {{ #data.page.title }}<p style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><span class="labDs-label">Title</span> {{{ data.page.title }}}</p>{{ /data.page.title }}
+    <p><span class="labDs-label">Url</span> <a href="{{{ data.page.url }}}" target="_blank">View {{{ data.page.type }}}</a> - <a href="{{{ data.page.url_edit }}}" target="_blank">Edit {{{ data.page.type }}}</a></p>
+    <p><span class="labDs-label">Site</span> {{{ data.page.site.alias }}} (id: {{{ data.page.site.id }}})</p>
+    {{ #data.page.section }}<p><span class="labDs-label">Section</span> {{{ data.page.section }}}</p>{{ /data.page.section }}
+    <p><span class="labDs-label">User - Name</span> {{{ data.user.name }}}</p>
+    <p><span class="labDs-label">User - Email</span> {{{ data.user.email }}}</p>
+</div>
