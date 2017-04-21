@@ -13,6 +13,8 @@ This allows other plugins to act on the events.
 Require CMS-version 3.0.13 or later.
 
 ## To install
+- Move the plugin-folder `Pusher` to `/view_resources/lib/edit/plugins/`.
+
 - Add the plugin to a Dashboard-page using a property-file for edit-mode.
 Config-example for page:
 ```json
