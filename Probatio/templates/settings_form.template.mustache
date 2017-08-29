@@ -1,0 +1,93 @@
+<form action="">
+    
+    <style type="text/css">
+        ul.pb_stats {
+            margin: -1em 0 1.5em;
+            padding: 0;
+            list-style-type: none;
+            text-align: center;
+            overflow: auto;
+            line-height: 1.2em;
+        }
+        ul.pb_stats li {
+            width: 33.5%;
+            float: left;
+            border-right: 1px solid #d4d4d4;
+            margin: 0;
+            padding: 0.2em 0;
+            background-color: #efeeee;
+        }
+        ul.pb_stats.pb_winner li {
+            background-color: #4be826;
+        }
+        ul.pb_stats li.pb_label {
+            float: none;
+            width: 100%;
+            background-color: #fff;
+            border: 0;
+        }
+        ul.pb_stats li:last-child {
+            border-right: 0;
+            width: 33%
+        }
+        ul.pb_stats li .pb_stat_label {
+            display: block;
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: gray;
+        }
+
+        .probatio-preview .two-grid:nth-child(odd) {
+            padding-right: 0.5em;
+        }
+
+        .probatio-preview .two-grid:nth-child(even) {
+            padding-left: 0.5em;
+        }
+
+    </style>
+
+    <h3>Probatio AB-test</h3>
+
+    <div class="settings" style="overflow: auto; margin-top: 1em;">
+        
+        <label style="width: 49%; float: left; margin-right: 2%;">Name <input type="text" name="name" value="{{{ settings.name }}}" placeholder="(required) Name of test" /></label>
+        
+        <label style="width: 49%; float: left;">Description <input type="text" name="description" value="{{{ settings.description }}}" placeholder="(optional) Description of test"/></label>
+        
+        <!-- <label style="width: 32%; float: left; margin-right: 2%;">State
+            <select name="state">
+                {{ #settings.states}}
+                    <option value="{{ value }}" {{ #selected}}selected{{ /selected}}>{{ key }}</option>
+                {{ /settings.states}}
+            </select>
+        </label> -->
+
+        <label style="width: 49%; float: left; margin-right: 2%;">Mode
+            <select name="testMode">
+                {{ #settings.testModes}}
+                    <option value="{{ value }}" {{ #selected}}selected{{ /selected}}>{{ key }}</option>
+                {{ /settings.testModes}}
+            </select>
+        </label>
+
+        <label style="width: 49%; float: left;">Expire
+            <select name="testExpire">
+                {{ #settings.testExpires}}
+                    <option value="{{ value }}" {{ #selected}}selected{{ /selected}}>{{ key }}</option>
+                {{ /settings.testExpires}}
+            </select>
+        </label>
+        
+        <p style="clear: both;">
+            {{ ^hasTest }}<span class="description" style="padding: 1.5em 0 0; display: block;">No active test for this article</span>{{ /hasTest }}
+            <input type="submit" class="button right" value="{{ submit_title }}" style="margin-top: 1em; background-color: rgb(7, 129, 7); min-width: 8em;"/>
+            <input type="button" class="button right delete" value="{{ delete_title }}" style="margin-top: 1em; margin-right: 1em; {{ ^hasTest }}background-color: gray;{{ /hasTest }}{{ #hasTest }}background-color: red;{{ /hasTest }} min-width: 8em;" {{ ^hasTest }}disabled{{ /hasTest }}/>
+        </p>
+    </div>
+
+    <div class="probatio-preview" style="clear: both; position: relative; margin-top: 1em; display: flex; flex-wrap: wrap;"></div>
+    <span id="reload-probatio-preview-btn" style="float:right; color: #0787d6; cursor:pointer; clear: both;"><span class="lab-icon-refresh"></span> Reload test-results</span>
+
+</form>
