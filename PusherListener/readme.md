@@ -5,10 +5,10 @@ This plugin is written specifically for Labrador Dashboards and will redraw cont
 
 The plugin only redraws contentboxes displaying articles from the same section as the published article.
 
-Require CMS-version 3.0.13 or later and the plugin `Plugins.Pusher` to post updates.
+Requires CMS-version 3.0.13 or later and the plugin `Plugins.Pusher` to post updates.
 
 ## To install
-- Move the plugin-folder `PusherListener` to `/view_resources/lib/edit/plugins/`.
+- Move the plugin-folder `PusherListener` to `/view_resources/dashboard/lib/edit/plugins/`.
 
 - Add the plugin to a Dashboard-page using a property-file for edit-mode.
 Config-example for page:
