@@ -35,14 +35,18 @@ Plugins.PusherListener = function(params) {
 
         // Get string matching 'section'-query of article_list-boxes (like "section:nyheter AND")
         var filteredSection = 'section:' + data.page.section + ' AND';
+        var publishedSiteId = data.page.site.id;
 
         // Find content-boxes of type 'article_list' displaying articles with identical section as the published article.
         var articleLists = Lab.structureController.getModelsByType('article_list');
         var matchedBoxes = [];
         articleLists.forEach(function(structureModel) {
-            // Check section-settings:
-            var sectionQuery = structureModel.getNodeModel().get('fields.sectionQuery');
-            if (sectionQuery == filteredSection || sectionQuery == '') {
+            // Check section- and site-settings:
+            var nodeModel =  structureModel.getNodeModel();
+            var sectionQuery = nodeModel.get('fields.sectionQuery');
+            var siteId = nodeModel.get('fields.site_id');
+
+            if ((sectionQuery == filteredSection || sectionQuery == '') && (siteId == publishedSiteId || siteId == '') ) {
                 matchedBoxes.push(structureModel);
             }
         });
