@@ -493,7 +493,7 @@ Plugins.Probatio = function(params) {
         instance.toggleBusy(true);
         Lab.Util.Ajax.ajax(
             'POST', 
-            '/ajax/integration/get-collection?_service=customer/db/probatio/', 
+            '/ajax/integration/get-collection?_service=' + instance.servicePath, 
             requestData,
             function (resp) {
                 instance.toggleBusy(false);
