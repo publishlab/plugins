@@ -92,6 +92,7 @@
     overflow: auto;
     height: 100%;
     max-height: 11.4em;
+    box-sizing: content-box;
 }
 
 #plugins-pusher-activity.ppa-open .ppa-pages {
