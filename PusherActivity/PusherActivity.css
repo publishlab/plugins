@@ -38,6 +38,7 @@
     border-radius: 50%;
     padding: 0.2em 0.1em 0;
     background-color: #fff;
+    box-sizing: content-box;
 }
 
 #plugins-pusher-activity:hover:before {
@@ -141,6 +142,7 @@
     font-weight: 200;
     display: block;
     padding: 0.2em 0 0;
+    line-height: 1;
 }
 
 #plugins-pusher-activity.ppa-open .ppa-pages .ppa-page[data-page-type='article']:before {
